@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+	<!--====== Animate CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <!--====== Bootstrap CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-5.0.5-alpha.min.css' %}">
+	
+    	<!--====== Nouislider CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/nouislider.css' %}">
+    <!--====== glightbox CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/glightbox.min.css' %}">
+    <!--====== style.css CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/style.css.map' %}">
+    <!--====== selectr CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/selectr.css' %}">
+    <!--====== tiny-slider CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}">
+    <!--====== LineIcons.2.0 CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/LineIcons.2.0.css' %}">
+    <!--====== Style CSS ======-->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Repost</title>
+</head>
+{% endblock %}
+<body>
+   <!-- меню сайта --> 
+{% include 'include/nav.html' %}
+    <!-- контент сайта -->  
+<main class='' id="main">
+    {% block content %}
+    {% endblock %}
+</main>
+
+{% block js %}   
+    <!--====== Bootstrap js ======-->
+    <script src="{% static 'js/bootstrap.bundle-5.0.0.alpha-min.js' %}"></script>
+    <!--====== Nouislider js ======-->
+	<script src="{% static 'js/nouislider.js' %}"></script>
+    <!--====== glightbox js ======-->
+	<script src="{% static 'js/glightbox.min.js' %}"></script>
+    <!--====== selectr js ======-->
+	<script src="{% static 'js/selectr.min.js' %}"></script>
+    <!--====== tiny-slider js ======-->
+	<script src="{% static 'js/tiny-slider.js' %}"></script>
+    <!--====== wow.min js ======-->
+	<script src="{% static 'js/wow.min.js' %}"></script>
+    <!-- Template Main JS File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+
+		//========= glightbox
+		const myGallery = GLightbox({
+			'href': 'assets/video/Free App Landing Page Template - AppLand.mp4',
+			'type': 'video',
+			'source': 'youtube', //vimeo, youtube or local
+			'width': 900,
+			'autoplayVideos': true,
+		});
+
+		//======== tiny slider for feature-product-carousel
+		tns({
+			slideBy: 'page',
+			autoplay: false,
+			mouseDrag: true,
+			gutter: 20,
+			nav: false,
+			controls: true,
+			controlsPosition: 'bottom',
+			controlsText: [
+				'<span class="prev"><i class="lni lni-chevron-left"></i></span>', 
+				'<span class="next"><i class="lni lni-chevron-right"></i></span>'
+			],
+			container: ".feature-product-carousel",
+			items: 1,
+			center: false,
+			autoplayTimeout: 5000,
+			swipeAngle: false,
+			speed: 400,
+			responsive: {
+				768: {
+					items: 2,
+				},
+
+				992: {
+					items: 2,
+				},
+
+				1200: {
+					items: 3,
+				}
+			}
+		});
+
+		//======== tiny slider for testimonial
+		tns({
+			slideBy: 'page',
+			autoplay: false,
+			mouseDrag: true,
+			gutter: 20,
+			nav: true,
+			controls: false,
+			container: ".testimonial-carousel",
+			items: 1,
+			center: false,
+			autoplayTimeout: 5000,
+			swipeAngle: false,
+			speed: 400,
+			responsive: {
+				768: {
+					items: 2,
+				},
+				1200: {
+					items: 3,
+				}
+			}
+		});
+	</script>
+
+{% endblock %}  
+
+</body>
+</html>
